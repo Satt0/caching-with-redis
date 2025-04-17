@@ -8,6 +8,7 @@
 >     - Promise: suitable for this solution
 >     - Express: use as example RESTFul server. can be any frameworks
 ## Implementation
+> This implementation focus on the caching technique. Redis, database, api setups are pretty simple and not production ready.
 ### Setup Cache class with redis connection
 
 ```js 
@@ -36,7 +37,7 @@ class Cache {
 ```
 ### Implement the solution
   
-> This implementation focus on the caching technique. Redis, database, api setups are pretty simple and not production ready.
+
 
 ```js
 async getAndSetWithLock(key, valueGetter) {
