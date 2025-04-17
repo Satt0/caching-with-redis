@@ -98,7 +98,7 @@ app.listen(3000, () => {
 ```js
 import sqlite3 from 'sqlite3'
 
-const db = new sqlite3.Database('./chinook.db');
+const db = new sqlite3.Database('./sample.db');
 
 export const getData = () => {
     return new Promise((res, ej) => {
