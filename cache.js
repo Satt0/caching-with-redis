@@ -10,7 +10,7 @@ class Cache {
         await this.redis.connect()
         return this
     }
-    // get set can be replace with redis
+    // expect all data is json.
     async get(key) {
         return JSON.parse(await this.redis.get(key))
     }
@@ -19,15 +19,7 @@ class Cache {
         assert(result.toUpperCase() === 'OK', 'Cannot set value to redis' + result)
         return value
     }
-    createLock() {
-        let resolve
-        const locker = new Promise(res => {
-            resolve = res
-        })
-        return {
-            locker, unlock: () => resolve()
-        }
-    }
+    //
     async getAndSetWithLock(key, valueGetter) {
         const exist = await this.get(key)
         if (exist) return exist
