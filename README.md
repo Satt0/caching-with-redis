@@ -1,12 +1,12 @@
 # Implement robust caching with redis
 ## Context
-     When a data is not present in caching (expired or at startup), many concurrent requests want to access that data. This can cause overload to database.
+> When a data is not present in caching (expired or at startup), many concurrent requests want to access that data. This can cause overload to database.
 ## Solution
-    Use blocking mechanism so that only first request that will get and set the data to cache. The blocking logic should run fast and not add pain point to existing system
+> Use blocking mechanism so that only first request that will get and set the data to cache. The blocking logic should run fast and not add pain point to existing system
 ## Tools
-    1. Redis: fast, scalable caching storage
-    2. Promise: suitable for this solution
-    3. Express: use as example RESTFul server. can be any frameworks
+>     - Redis: fast, scalable caching storage
+>     - Promise: suitable for this solution
+>     - Express: use as example RESTFul server. can be any frameworks
 ## Implementation
 ### Setup Cache class with redis connection
 
